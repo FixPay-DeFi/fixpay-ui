@@ -3,6 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Wallet, Menu, X } from 'lucide-react';
 import { WalletModal } from './WalletModal';
 
+import { useTheme } from "next-themes";
+import { Sun, Moon } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ThemeToggle } from "./ThemeToggle";
+
 export function Header() {
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,6 +40,8 @@ export function Header() {
             <a href="/wallet" className="text-muted-foreground hover:text-foreground transition-colors">
               Wallet
             </a>
+            {/* ✅ Add the toggle button here */}
+                            <ThemeToggle />
           </nav>
 
           {/* Desktop CTA */}
@@ -108,5 +115,19 @@ export function Header() {
         onClose={() => setIsWalletModalOpen(false)} 
       />
     </>
+  );
+}
+
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <Button
+      variant="outline"
+      size="icon"
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+    >
+      {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+    </Button>
   );
 }
