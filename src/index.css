@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FixPay Design System - Web3 + Fintech Aesthetic
+All colors MUST be HSL for consistency and theming.
+*/
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    /* Card components */
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    /* Popover components */
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    /* Primary - Deep blockchain purple */
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 20% 98%;
+    --primary-glow: 262 83% 68%;
+
+    /* Secondary - Tech cyan for actions */
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 210 20% 98%;
+    --secondary-glow: 199 89% 58%;
+
+    /* Muted tones */
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    /* Accent - Success green */
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 20% 98%;
+
+    /* Warning - Attention orange */
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+
+    /* Destructive - Error red */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    /* Borders and inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
+
+    /* Design system additions */
+    --radius: 0.5rem;
+
+    /* Custom gradients for Web3 feel */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(199 89% 48%));
+    --gradient-hero: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(262 90% 65%) 50%, hsl(199 89% 48%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14.3% 98%) 100%);
+    
+    /* Shadows for depth */
+    --shadow-soft: 0 2px 8px -2px hsl(262 83% 58% / 0.1);
+    --shadow-glow: 0 4px 20px -4px hsl(262 83% 58% / 0.25);
+    --shadow-card: 0 4px 16px -4px hsl(220 13% 91% / 0.4);
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+
+    /* Card components */
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+
+    /* Popover components */
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    /* Primary - Deep blockchain purple (adjusted for dark) */
+    --primary: 262 83% 68%;
+    --primary-foreground: 224 71.4% 4.1%;
+    --primary-glow: 262 83% 78%;
+
+    /* Secondary - Tech cyan (adjusted for dark) */
+    --secondary: 199 89% 58%;
+    --secondary-foreground: 224 71.4% 4.1%;
+    --secondary-glow: 199 89% 68%;
+
+    /* Muted tones for dark */
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    /* Accent - Success green (adjusted) */
+    --accent: 142 76% 46%;
+    --accent-foreground: 210 20% 98%;
+
+    /* Warning - Attention orange (adjusted) */
+    --warning: 38 92% 60%;
+    --warning-foreground: 224 71.4% 4.1%;
+
+    /* Destructive - Error red */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    /* Borders and inputs for dark */
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 262 83% 68%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 68%), hsl(199 89% 58%));
+    --gradient-hero: linear-gradient(135deg, hsl(262 83% 68%) 0%, hsl(262 90% 75%) 50%, hsl(199 89% 58%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(224 71.4% 6%) 0%, hsl(215 27.9% 18%) 100%);
+    
+    /* Dark mode shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 4px 20px -4px hsl(262 83% 68% / 0.4);
+    --shadow-card: 0 4px 16px -4px hsl(0 0% 0% / 0.2);
+
+    /* Sidebar colors for dark mode */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
